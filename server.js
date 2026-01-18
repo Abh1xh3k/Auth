@@ -9,7 +9,7 @@ const PORT= 3000;
 connectDb();
 app.use(express.json());
 app.use(cookieParser());
-app.use('/api/auth' ,AuthRoutes)
+app.use('/api/auth' ,limiter,AuthRoutes)
 
 app.listen(PORT,()=>{
   console.log("server running on port 3000")
